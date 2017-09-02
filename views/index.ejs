@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment-timezone/0.5.13/moment-timezone-with-data-2012-2022.min.js"></script>
+    <script src='/javascripts/main.js'></script>
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <p>Hello Kipsu staff member!</p>
+    <form>
+      <div class="form-group">
+        <label for="exampleFormControlSelect1">Select a Company</label>
+        <select class="form-control" id="companies">
+            <option value="">Select a company</option>
+          <% companies.forEach(function(company){ %>
+            <option value="<%=company.company%>,<%=company.timezone%>"><%=company.company%></option>
+          <% }); %>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="exampleFormControlSelect2">Select a Guest</label>
+        <select class="form-control" id="guests">
+            <option value="">Select a guest</option>
+          <% guests.forEach(function(guest){ %>
+            <option value="<%=guest.firstName%> <%=guest.lastName%>,<%=guest.reservation.roomNumber%>"><%=guest.firstName%> <%=guest.lastName%></option>
+          <% }); %>
+        </select>
+      </div>
+      <textarea class="form-control" id="message" name="message" rows="8"></textarea>
+      <button type="button" name="button" class="btn btn-primary pull-right">Send text message</button>
+    </form>
+
+    <script id="email-template" type="text/x-handlebars-template">Good {{greeting}} {{guest}}, and welcome to {{company}}! Room {{roomNumber}} is now ready for you. Enjoy your stay, and let us know if you need anything.</script>
+  </body>
+</html>

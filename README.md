@@ -25,12 +25,12 @@ I read the requirements carefully and followed them as best I can. I used consol
     - better dialog than the standard alert
     - add material design
 - Grunt/gulp/webpack for build processor
-    - minify css/javascript
+    - minify CSS/JavaScript
     - Unit test if necessary
 - Add more message template so users can select or allow them to create new message and store in a database to be re-use.
 - Actually send the message with Twilio ( a SMS service )
-- Use a javascript framework ( Angular )
-- Use database (Mongodb or postgresql) to store the json data
+- Use a JavaScript framework ( Angular )
+- Use database (MongoDB or PostgreSQL) to store the JSON data
 - Allow user to save message draft and to send it later
 - Allow user to add more Company or Guest on the page
 - Add a login screen ( authentication or basic auth)

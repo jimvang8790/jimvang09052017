@@ -12,31 +12,39 @@
     <script src='/javascripts/main.js'></script>
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Hello Kipsu staff member!</p>
-    <form>
-      <div class="form-group">
-        <label for="exampleFormControlSelect1">Select a Company</label>
-        <select class="form-control" id="companies">
-            <option value="">Select a company</option>
-          <% companies.forEach(function(company){ %>
-            <option value="<%=company.company%>,<%=company.timezone%>"><%=company.company%></option>
-          <% }); %>
-        </select>
+    <div class="wrapper">
+      <div class="container text-center header">
+        <h1><%= title %></h1>
+        <p>Hello Kipsu staff member!</p>
       </div>
-      <div class="form-group">
-        <label for="exampleFormControlSelect2">Select a Guest</label>
-        <select class="form-control" id="guests">
-            <option value="">Select a guest</option>
-          <% guests.forEach(function(guest){ %>
-            <option value="<%=guest.firstName%> <%=guest.lastName%>,<%=guest.reservation.roomNumber%>"><%=guest.firstName%> <%=guest.lastName%></option>
-          <% }); %>
-        </select>
+      <br>
+      <div class="container">
+        <form>
+          <div class="form-group">
+            <label for="exampleFormControlSelect1" class="required">Select a Company</label>
+            <select class="form-control" id="companies">
+                <option value="">Select a company</option>
+              <% companies.forEach(function(company){ %>
+                <option value="<%=company.company%>,<%=company.timezone%>"><%=company.company%></option>
+              <% }); %>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlSelect2" class="required">Select a Guest</label>
+            <select class="form-control" id="guests">
+                <option value="">Select a guest</option>
+              <% guests.forEach(function(guest){ %>
+                <option value="<%=guest.firstName%> <%=guest.lastName%>,<%=guest.reservation.roomNumber%>"><%=guest.firstName%> <%=guest.lastName%></option>
+              <% }); %>
+            </select>
+          </div>
+          <label class="required">Message</label>
+          <textarea class="form-control" id="message" name="message" rows="8"></textarea>
+          <p class="indicates pull-left">Indicates required field</p>
+          <button type="button" name="button" class="btn btn-primary pull-right">Send Message</button>
+        </form>
       </div>
-      <textarea class="form-control" id="message" name="message" rows="8"></textarea>
-      <button type="button" name="button" class="btn btn-primary pull-right">Send text message</button>
-    </form>
-
+    </div>
     <script id="email-template" type="text/x-handlebars-template">Good {{greeting}} {{guest}}, and welcome to {{company}}! Room {{roomNumber}} is now ready for you. Enjoy your stay, and let us know if you need anything.</script>
   </body>
 </html>

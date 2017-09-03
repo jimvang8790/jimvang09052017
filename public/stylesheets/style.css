@@ -3,10 +3,35 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
-}
-
 button {
   margin-top: 10px;
+}
+
+form {
+  padding: 5px;
+}
+
+.container {
+  max-width: 800px;
+}
+
+.header {
+  background-color: grey;
+  color: #fff;
+}
+
+.required:after {
+  content:" *";
+  color: red;
+}
+
+.indicates {
+  font-style: italic;
+  font-weight: 400;
+  margin-top: 10px;
+}
+
+.indicates:before {
+  content:"* ";
+  color: red;
 }

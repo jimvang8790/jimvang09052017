@@ -6,7 +6,7 @@ var guests = JSON.parse(fs.readFileSync('./data/Guests.json', 'utf8'));
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Kipsu', companies: companies, guests: guests });
+  res.render('index', { title: 'Hotel Company', companies: companies, guests: guests });
 });
 
 module.exports = router;
